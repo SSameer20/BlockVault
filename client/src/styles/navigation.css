@@ -1,0 +1,30 @@
+nav{
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border-bottom: 0.1px solid white;
+    
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    gap: 5vw;
+    padding: 0 10vw 0 0;
+}
+
+nav ul li > *{
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+nav ul li:hover >*{
+    transition: 0.4s;
+    color: white;
+    font-weight: 600;
+ 
+
+}
