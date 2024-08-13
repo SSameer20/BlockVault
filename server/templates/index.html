@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Status</title>
+    <script>
+        // Function to update the time
+        function updateTime() {
+            const timeTag = document.getElementById('time');
+            const currentTime = new Date().toLocaleTimeString();
+            timeTag.textContent = `Current Time: ${currentTime}`;
+        }
+
+        // Call the function to display the time immediately on load
+        window.onload = updateTime;
+
+       // Update the time every second
+        setInterval(updateTime, 1000); 
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 2em;
+        }
+        p {
+            color: #555555;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Server is Running!</h1>
+        <p>Your Express server is up and running.</p>
+        <p id="time"></p> 
+    </div>
+</body>
+</html>
