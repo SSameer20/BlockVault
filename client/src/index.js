@@ -1,32 +1,50 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Loader from './components/Loader';
-import {BrowserRouter} from "react-router-dom"
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import Authenticate from './components/Authenticate';
+import Home from './components/Home';
+import About from './components/About';
+import Profile from './components/Profile';
+import Wallet from './components/Wallet';
+
+
+const LoaderWithRedirect = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate("/auth");
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
+
+  return <Loader />;
+};
 
 const RootComponent = () => {
-  const [load, setLoad] = useState(true)
-  useEffect(() => {
-
-    setTimeout(() => {
-      setLoad(false)
-    }, 3000);
-
-  }, [])
   return (
     <BrowserRouter>
-    
-    {load ? <Loader /> : <App />}
+      <Routes>
+        <Route path="/" element={<LoaderWithRedirect />} />
+        <Route path="/auth" element={<Authenticate />} />
+        <Route path="/app" element={<App />}>
+          <Route index element={<Home />} />
+          <Route path="wallet" element={<Wallet/>} />
+          <Route path="about" element={<About/>} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RootComponent />);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();
