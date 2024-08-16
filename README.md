@@ -1,4 +1,8 @@
-# Block Vault
+
+![banner]('./banner.jpg')
+<hr>
+# BLOCKVAULT
+
 
 Block Vault is a secure and intuitive web-based cryptocurrency wallet designed to provide users with a seamless experience for managing their digital assets. With a focus on security, usability, and accessibility, Block Vault enables users to store, send, receive, and monitor their cryptocurrencies with ease.
 
@@ -25,3 +29,4 @@ Block Vault is a secure and intuitive web-based cryptocurrency wallet designed t
    git clone https://github.com/SSameer20/BlockVault.git
    cd block-vault
    ```
+
