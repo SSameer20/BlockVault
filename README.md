@@ -1,6 +1,6 @@
 
-![banner]('./banner.jpg')
-<hr>
+![banner](/assets/banner.jpg)
+
 # BLOCKVAULT
 
 
@@ -21,12 +21,4 @@ Block Vault is a secure and intuitive web-based cryptocurrency wallet designed t
 
 - **Node.js**: Ensure you have Node.js installed on your system. You can download it from [here](https://nodejs.org/).
 - **Solana CLI**: Block Vault integrates with Solana blockchain. Install the Solana CLI from [here](https://docs.solana.com/cli/install-solana-cli-tools).
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/SSameer20/BlockVault.git
-   cd block-vault
-   ```
 
