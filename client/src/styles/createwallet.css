@@ -1,0 +1,17 @@
+.create-wallet{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.create-btn{
+    width: 20vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+}

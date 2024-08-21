@@ -3,13 +3,24 @@ import "../styles/auth.css"
 import profile from "../media/profile.jpg"
 import punk from "../media/punk.jpg"
 
+const Load = () => {
+  return( 
+    <div className='btn-loader'>
+      <div className="btn-load">
+
+      </div>
+    </div>
+  )
+}
+
 export default function Authenticate() {
   const [form, setForm] = useState(true)
 
   const handleForm = () => {
     setForm(!form)
-
   }
+
+  const [load, setload] = useState(false)
   return (
     <div className='authentication'>
       <div className="form">
@@ -23,7 +34,12 @@ export default function Authenticate() {
           <input type="email" name="email" id="login-email" placeholder='email' />
           <input type="password" name="password" id="login-password" placeholder='password' />
           <div className="btn">
-            UNLOCK
+            {
+              form && load ? (
+                <Load />
+              ) : (<span>UNLOCK</span>)
+            }
+            
           </div>
         </div>) : (<div className="register">
           <img src={punk} alt="" />

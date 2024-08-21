@@ -10,6 +10,8 @@ import Home from './components/Home';
 import About from './components/About';
 import Profile from './components/Profile';
 import Wallet from './components/Wallet';
+import CreateWallet from './components/CreateWallet';
+import ImportWallet from './components/ImportWallet';
 
 
 const LoaderWithRedirect = () => {
@@ -17,7 +19,7 @@ const LoaderWithRedirect = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate("/auth");
+      navigate("/app");
     }, 2000);
 
     return () => clearTimeout(timer);
@@ -34,6 +36,8 @@ const RootComponent = () => {
         <Route path="/auth" element={<Authenticate />} />
         <Route path="/app" element={<App />}>
           <Route index element={<Home />} />
+          <Route path="wallet/create" element={<CreateWallet/>} />
+          <Route path="wallet/import" element={<ImportWallet/>} />
           <Route path="wallet" element={<Wallet/>} />
           <Route path="about" element={<About/>} />
           <Route path="profile" element={<Profile />} />

@@ -82,3 +82,9 @@ img{
     cursor: pointer;
 
 }
+
+input:focus{
+    padding: 10px 15px;
+    border-color:1px solid yellow;
+    transition: 0.2s;
+}

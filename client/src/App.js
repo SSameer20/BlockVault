@@ -6,10 +6,7 @@ import Navigation from './components/Navigation';
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <div className="component">
       <Outlet />
-      </div>
     </div>
   );
 }
