@@ -2,7 +2,9 @@
   background-color: #17153B;
   width: 100vw;
   height: 100vh;
-  display: grid;
-  grid-template-columns: auto;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  /* padding: 10vh; */
 }
 

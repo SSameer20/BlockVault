@@ -1,8 +1,12 @@
 .create-wallet{
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 80%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 100px;
+    /* padding-top: 10%; */
    
 }
 
@@ -14,4 +18,59 @@
     align-items: center;
     border-radius: 20px;
     padding: 10px 20px;
+    cursor: pointer;
+}
+
+.word-section {
+    color: white;
+    min-width: 40vw;
+    min-height: 30vh;
+    background-color: #1E201E;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 10px;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px 50px;
+}
+
+.data{
+    width: 100px;
+    height: 20px;
+    background-color: #414441;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#copy-btn{
+    border: 0.1px solid white;
+    padding: 10px 15px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+.wallet-types{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.wallet-btn{
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    border: 0.1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.wallet-btn:hover{
+    background-color: white;
+    color: #1E201E;
+    transition: 0.4s;
+    font-weight: 500;
 }
