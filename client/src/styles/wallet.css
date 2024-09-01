@@ -1,49 +1,30 @@
-.wallet-card{
-    width: 60vw;
-    height: 70vh;
-    background-color: #3734308d;
-    border-radius: 10px; 
-    color: white;
+.header{
     display: flex;
     justify-content: start;
     align-items: center;
-    flex-direction: column;
-    padding: 20px 10px;
+    gap: 100px;
 }
 
-.value{
-    font-size: xx-large;
-    color: aliceblue;
-    font-weight: 700;
+.form-select{
+    width: 60%;
 }
 
-.balance{
-    text-align: center;
-}
-.crypto-balance{
-    width: 100%;
+.head-text{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    justify-content: start;
+}
+
+.action-list{
+    display: flex;
+    justify-content:space-around;
+}
+
+.action-btn{
+    width: 25%;
+    height: 100px;
     justify-content: center;
     align-items: center;
-
+    background-color: rgba(174, 169, 169, 0.652);
+    
 }
-.crypto-card{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 90%;
-    border: 0.1px solid rgba(255, 255, 255, 0.274);
-    border-radius: 50px;
-    padding: 10px 20px;
-}
-
-.crypto-card img{
-    height: min(10vh, 10vw);
-}
-
-.crypto-details{
-    text-align: center;
-}
-

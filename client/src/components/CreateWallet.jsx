@@ -1,5 +1,4 @@
 import React, { useEffect, useState, createContext } from 'react';
-import "../styles/createwallet.css";
 import { Oval } from 'react-loader-spinner';
 import CryptoJS from 'crypto-js';
 import swal from 'sweetalert';
@@ -7,6 +6,9 @@ import eye from '../media/eye.png';
 import hide from '../media/hide.png';
 import { saveWalletData, getWalletData } from '../store';
 import { useNavigate } from 'react-router-dom';
+import "../styles/createwallet.css";
+import axios from 'axios'
+import { response } from 'express';
 
 export const dataContext = createContext(null);
 
@@ -60,25 +62,38 @@ export default function CreateWallet() {
   useEffect(() => {
     if (create && mnemonic.length === 0) {
       setLoading(true);
-      fetch("http://localhost:8080/data/mnemonic", {
-        method: 'GET'
+      axios.get("http://localhost:8080/data/mnemonic")
+      .then((data) => {
+        // const encryptedData = CryptoJS.AES.encrypt(data.data, password).toString();
+        //   await saveWalletData({
+        //     mnemonic: encryptedData,
+        //     password: password,
+        //   });
+        //   setMnemonic(data.data.split(" "));
+        //   setLoading(false);
+        console.log(data)
       })
-        .then(response => response.json())
-        .then(async data => {
-          const encryptedData = CryptoJS.AES.encrypt(data.data, password).toString();
-          await saveWalletData({
-            mnemonic: encryptedData,
-            password: password,  // Consider further securing this
-            solanaWalletIndex: 0,
-            ethereumWalletIndex: 0
-          });
-          setMnemonic(data.data.split(" "));
-          setLoading(false);
-        })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-          setLoading(false);
-        });
+      .catch((error) => console.log(error))
+
+      // fetch("http://localhost:8080/data/mnemonic", {
+      //   method: 'GET'
+      // })
+      //   .then(response => response.json())
+      //   .then(async data => {
+      //     const encryptedData = CryptoJS.AES.encrypt(data.data, password).toString();
+      //     await saveWalletData({
+      //       mnemonic: encryptedData,
+      //       password: password,
+      //       solanaWalletIndex: 0,
+      //       ethereumWalletIndex: 0
+      //     });
+      //     setMnemonic(data.data.split(" "));
+      //     setLoading(false);
+      //   })
+      //   .catch(error => {
+      //     console.error('Error fetching data:', error);
+      //     setLoading(false);
+      //   });
     }
   }, [create, password]);
 

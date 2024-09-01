@@ -4,19 +4,32 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
+    background-color: #17153B;
 }
 
 .form{
-    width: 25vw;
-    height: 60vh;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px black;
-    padding: 20px 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   background-color: rgb(255, 255, 255);
+   min-height: 30vh;
+   min-width: 20vw;
+   padding: 30px 10px;
+   border-radius: 20px;
+  
+
+}
+
+.login, .register{
     display: flex;
-    flex-direction: column;
-
-
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+   min-width: 20vw;
+   
 }
 
 .form-btn{
@@ -36,17 +49,7 @@
     
 }
 
-.login, .register{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: space-around;
-    align-items: center;
-    width: 25vw;
-    height: 50vh;
-    text-align: center;
-    margin: 20px 10px;
-}
+
 
 input{
     padding: 5px 10px;
@@ -57,7 +60,7 @@ input{
 
 img{
     border-radius: 50%;
-    height: 25vh;
+    max-height: 10vw;
 }
 
 .btn{
