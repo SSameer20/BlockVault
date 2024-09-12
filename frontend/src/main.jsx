@@ -19,8 +19,8 @@ createRoot(document.getElementById('root')).render(
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/auth' element={<Authentication />} />
-            <Route path='/app' element={<App />}>
-              <Route path='' element={<WalletGeneration />} />
+            <Route path='/app/' element={<App />}>
+              <Route index element={<WalletGeneration />} />
               <Route path='wallet' element={<Wallet/>} />
               <Route path='wallet/create' element={<CreateWallet/>} />
               <Route path='wallet/import' element={<ImportWallet />} />
@@ -29,5 +29,5 @@ createRoot(document.getElementById('root')).render(
         </BrowserRouter>
       </main>
     </NextUIProvider>
-  </StrictMode>,
+  </StrictMode>
 )
