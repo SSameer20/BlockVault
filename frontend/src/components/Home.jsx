@@ -12,12 +12,7 @@ export default function Home() {
   const handleButton = () => {
       navigate('/app')
   }
-
-  // useEffect(() => {
-  //  setTimeout(() => {
-  //       navigate('/app')
-  //  }, 3000)
-  // })
+  
   return (
     <>
       <div className='flex flex-col w-full h-screen justify-center items-center main-section'>
