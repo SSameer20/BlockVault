@@ -21,9 +21,9 @@ createRoot(document.getElementById('root')).render(
             <Route path='/auth' element={<Authentication />} />
             <Route path='/app/' element={<App />}>
               <Route index element={<WalletGeneration />} />
-              <Route path='wallet' element={<Wallet/>} />
-              <Route path='wallet/create' element={<CreateWallet/>} />
-              <Route path='wallet/import' element={<ImportWallet />} />
+              <Route path='wallet/' element={<Wallet/>} />
+              <Route path='wallet/create/' element={<CreateWallet/>} />
+              <Route path='wallet/import/' element={<ImportWallet />} />
             </Route>
           </Routes>
         </BrowserRouter>
