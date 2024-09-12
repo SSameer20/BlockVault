@@ -18,7 +18,7 @@ const createUser = async(req, res) => {
         newUser.save();
         return res.status(201).send({message : "user created successfully", data : newUser});
     } catch (error) {
-        return res.status(400).send({message : error});
+        return res.status(404).send({message : error});
     }
 }
 
@@ -34,7 +34,7 @@ const loginUser = async(req, res) => {
 
         
     } catch (error) {
-        return res.status(400).send({message : error});
+        return res.status(404).send({message : error});
     }
 }
 

@@ -16,5 +16,19 @@ const createWallet = async(req, res) => {
     }
 }
 
+const validateMnemonic = async(req, res) => {
+    try {
+        const { mnemonic } = req.body;
+        if (!bip39.validateMnemonic(mnemonic)) {
+            return res.status(404).send({msg : "invalid mnemonic"})
+        }
 
-module.exports = {createWallet}
+        return res.status(201).send({msg : "Valid Mnemonic"})
+
+    } catch (error) {
+        return res.status(404).send({msg :error})
+    }
+}
+
+
+module.exports = {createWallet,validateMnemonic}

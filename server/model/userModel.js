@@ -14,6 +14,7 @@ const userSchmea = new mongoose.Schema({
         type: String,
 
     },
+    ipAddress : [String],
     wallet_count : {
         type : Number,
         default : 0

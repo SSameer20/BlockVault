@@ -6,7 +6,7 @@ const cors = require("cors")
 const bodyParser = require('body-parser')
 const { mnemonic, mnemonicToSeed } = require('./web3/seedPhrase');
 const {createUser, loginUser} = require('./controller/userController')
-const {createWallet} = require('./controller/walletController')
+const {createWallet, validateMnemonic} = require('./controller/walletController')
 require('dotenv').config()
 
 // Middleware
@@ -35,6 +35,7 @@ app.post('/user/register',createUser);
 app.post('/user/login', loginUser)
 // Wallet Routes
 app.get('/data/mnemonic', mnemonic);
+app.post('/data/mnemonic/verify', validateMnemonic)
 app.post("/create/wallet", createWallet)
 
 
