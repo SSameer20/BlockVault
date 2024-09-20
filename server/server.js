@@ -22,7 +22,6 @@ const DB = async () => {
         console.log("Connected")
     }
 }
-
 DB();
 
 
@@ -33,6 +32,7 @@ app.get('/', (req, res) => {
 // User Routes
 app.post('/user/register',createUser);
 app.post('/user/login', loginUser)
+
 // Wallet Routes
 app.get('/data/mnemonic', mnemonic);
 app.post('/data/mnemonic/verify', validateMnemonic)

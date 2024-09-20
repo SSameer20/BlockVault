@@ -1,10 +1,10 @@
 const solanaWallet = require('../solana/solanaWallet')
 const ethereumWallet = require('../ethereum/ethereumWallet');
 
-const wallet = async(index, mnemonic) => {
+const wallet = async(mnemonic) => {
 
-    const solWallet = await solanaWallet(index, mnemonic)
-    const ethWallet = await ethereumWallet(index, mnemonic)
+    const solWallet = await solanaWallet(mnemonic)
+    const ethWallet = await ethereumWallet( mnemonic)
 
     return  {solWallet, ethWallet}
     

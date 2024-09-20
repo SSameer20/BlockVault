@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      'rubik' : ['Rubik', 'sans-serif']
+    }
   },
   darkMode: "class",
   plugins: [nextui()],

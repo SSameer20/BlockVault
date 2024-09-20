@@ -59,8 +59,32 @@ export const saveWalletData = async ({ mnemonic, email, password }) => {
 
 export const saveMnemonic = async ({ mnemonic }) => {
   const db = await dbPromise;
-  await db.put(STORE_NAME, { id: 'wallet', mnemonic });
+  const existingData = await db.get(STORE_NAME, 'wallet') ||  { id: 'wallet' }; ;
+  await db.put(STORE_NAME, { ...existingData, mnemonic });
+  // await db.put(STORE_NAME, { id: 'wallet', mnemonic });
 }
+
+/*
+  * saveCredentials({email: string, password : string})
+  * Use this function when you need to add/update the email to store
+  * 
+  * @example
+  *   const email = "user@example.com"
+  *   const password ="****"
+  *   await saveCredentials({email, password});
+  *   
+  * @output
+  *    {
+  *       email: "user@example.com"
+  *    }
+*/
+
+export const saveCredentials = async ({ email, password }) => {
+  const db = await dbPromise;
+  const existingData = await db.get(STORE_NAME, 'wallet') || { id: 'wallet' }; ;
+  await db.put(STORE_NAME, { ...existingData,  email, password });
+}
+
 
 /*
   * saveEmail({email: string})
@@ -78,7 +102,8 @@ export const saveMnemonic = async ({ mnemonic }) => {
 
 export const saveEmail = async ({ email }) => {
   const db = await dbPromise;
-  await db.put(STORE_NAME, { id: 'wallet', email });
+  const existingData = await db.get(STORE_NAME, 'wallet') || { id: 'wallet' }; ;
+  await db.put(STORE_NAME, { ...existingData,  email});
 }
 
 
@@ -98,7 +123,8 @@ export const saveEmail = async ({ email }) => {
 
 export const savePassword = async ({ password }) => {
   const db = await dbPromise;
-  await db.put(STORE_NAME, { id: 'wallet', password });
+  const existingData = await db.get(STORE_NAME, 'wallet') || { id: 'wallet' }; ;
+  await db.put(STORE_NAME, { ...existingData,  password});
 }
 
 

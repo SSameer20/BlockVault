@@ -7,6 +7,7 @@ const bip39 = require("bip39");
   * sam *** *** *** *** *** *** *** *** *** *** kite
   * Encoded = btoa(`secret phase`)
   * convert into encoded format ghvshxbjnxwdjdnjwcxwdcnxiuhwuixhwuxjmowxo and send to user
+  * Decoded = atob(`Encoded Phrase`)
 */
 
 const mnemonic = async (req, res) => {
